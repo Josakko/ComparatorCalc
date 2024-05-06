@@ -21,22 +21,15 @@ class Inventory:
 
 
 
+slots_num = int(input("Enter num of slots: "))
+slots = []
 
-inv = Inventory(9, [
-    Slot(64),
-    Slot(64),
-    Slot(64),
+for slot_ in range(slots_num):
+    num = input(f"[{slot_}] Enter num of max size of the stack (default 64): ")
+    fullness = input(f"[{slot_}] Enter number of items in the slot(default 0): ")
+    slots.append(Slot(int(fullness if fullness != "" else 0), int(num if num != "" else 64)))
 
-    Slot(),
-    Slot(),
-    Slot(),
+inv = Inventory(slots_num, slots)
 
-    Slot(),
-    Slot(),
-    Slot()
-])
-
-
-print(inv.percentage)
-print(inv.signal)
+print(f"Signal strength: {inv.signal}")
 

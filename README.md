@@ -10,7 +10,3 @@ calculator of strenght of the signal from comparator based on "fullness" of stor
 2. Then sum fullness percentages for each slot in the whole inventory and divide that sum by number of slots in inventory.
 
 3. Just multiply the result with constant `15` (maximum redstone signal strength) and floor it
-
-
-*`Formula:`* 
-<img src="img.jpg" alt="Image" style="transform: rotate(-90deg);">

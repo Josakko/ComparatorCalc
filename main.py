@@ -4,20 +4,20 @@ class Slot:
     def __init__(self, items_num=0, stack_size=64):
         self.items = items_num
         self.stack_size = stack_size
-        self.percentage = self.items / self.stack_size
+        self.fullness = self.items / self.stack_size
 
 
 class Inventory:
     def __init__(self, num_slots, slots):
         self.num_slots = num_slots
-        self.sum = 0
+        self.slot_fullness_sum = 0
         self.slots = slots
 
         for slot in self.slots:
-            self.sum += slot.percentage
+            self.slot_fullness_sum += slot.fullness
 
-        self.percentage = self.sum / self.num_slots
-        self.signal = int(self.percentage * 15)
+        self.fullness = self.slot_fullness_sum / self.num_slots
+        self.signal = int(self.fullness * 15)
 
 
 
